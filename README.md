@@ -9,7 +9,7 @@ Aplikasi ini menampilkan hasil deteksi kendaraan seperti **mobil, motor, bus, da
 ## 👥 Tim S² F Logic
 | Nama Lengkap | NIM | Peran |
 |---------------|------|-------|
-| **Samuel G. Christian Pakpahan** | 221113531 | Backend Developer / Integrator YOLOv8 |
+| **Samuel G. Christian Pakpahan** | 221113531 | Backend & Frontend Developer / Integrator YOLOv8 |
 | **Sontiar Eseria Tampubolon** | 221112223 | Frontend Developer / UI Designer |
 
 ---
@@ -117,6 +117,19 @@ smart-traffic-vision/
 | 🌐 **Deployment & Integrasi Live** | Fullstack terhubung React + FastAPI |
 | 🎥 **Demo Video** | Jelas, terstruktur, dan menunjukkan hasil live |
 | 📄 **Dokumentasi & Kode Sumber** | Lengkap, modular, mudah dijalankan |
+
+---
+
+## 📸 Tampilan Aplikasi Smart Traffic Vision
+
+### Dashboard
+![Dashboard](./assets/hasil (01).png)
+
+### Live Streaming
+![Live Streaming](./assets/hasil (02).png)
+
+### About Page
+![About Page](./assets/hasil (03).png)
 
 ---
 
