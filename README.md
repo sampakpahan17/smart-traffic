@@ -123,13 +123,13 @@ smart-traffic-vision/
 ## 📸 Tampilan Aplikasi Smart Traffic Vision
 
 ### Dashboard
-![Dashboard](./assets/hasil (01).png)
+![Dashboard](./assets/hasil%20(2).png)
 
 ### Live Streaming
-![Live Streaming](./assets/hasil (02).png)
+![LiveStreaming](./assets/hasil%20(3).png)
 
 ### About Page
-![About Page](./assets/hasil (03).png)
+![AboutPage](./assets/hasil%20(1).png)
 
 ---
 
