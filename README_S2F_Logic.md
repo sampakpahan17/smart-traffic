@@ -1,0 +1,169 @@
+# 🚦 Smart Traffic Vision (S² F Logic)
+
+## 📘 Deskripsi Proyek
+Proyek **Smart Traffic Vision** adalah sistem **AI berbasis Computer Vision** yang digunakan untuk mendeteksi dan menganalisis **tingkat kepadatan lalu lintas** secara otomatis dari kamera **CCTV ATCS Kota Medan**.  
+Aplikasi ini menampilkan hasil deteksi kendaraan seperti **mobil, motor, bus, dan truk**, serta menghitung volume kendaraan untuk menilai **tingkat kemacetan (Lenggang, Lancar, Ramai, Padat, Macet)** secara real-time.
+
+---
+
+## 👥 Tim S² F Logic
+| Nama Lengkap | NIM | Peran |
+|---------------|------|-------|
+| **Samuel G. Christian Pakpahan** | 221113531 | Backend Developer / Integrator YOLOv8 |
+| **Sontiar Eseria Tampubolon** | 221112223 | Frontend Developer / UI Designer |
+
+---
+
+## 🎯 Tujuan Proyek
+Proyek ini merupakan **tugas Ujian Tengah Semester (UTS)** mata kuliah **Machine Learning** dengan fokus penerapan model **YOLOv8** untuk deteksi kendaraan.  
+Sistem ini membantu menganalisis kondisi lalu lintas dengan menampilkan data deteksi secara visual melalui **dashboard interaktif** berbasis web.
+
+---
+
+## 🧠 Teknologi yang Digunakan
+### Backend
+- **Python 3.11+**
+- **FastAPI** – Framework untuk REST API dan video streaming.
+- **OpenCV** – Pengolahan video real-time dari CCTV.
+- **Ultralytics YOLOv8** – Model AI deteksi objek (kendaraan).
+- **Threading** – Untuk multi-stream deteksi paralel.
+- **Uvicorn** – Web server untuk menjalankan API FastAPI.
+
+### Frontend
+- **React.js (Vite)** – Framework SPA untuk dashboard.
+- **Tailwind CSS** – Desain responsif dan modern.
+- **Recharts** – Visualisasi data (pie chart, line chart, dsb).
+- **Axios** – Komunikasi API dengan backend.
+
+---
+
+## 🖼️ Fitur Utama
+- 🔴 **Live Streaming Deteksi Kendaraan** dari CCTV ATCS.
+- 📊 **Dashboard Statistik** total kendaraan per jenis dan per lokasi.
+- 🕒 **Update Real-Time** setiap 5 detik.
+- 🌡️ **Status Kepadatan Otomatis**: Lenggang, Lancar, Ramai, Padat, Macet.
+- 📈 **Visualisasi Data** menggunakan grafik dan pie chart interaktif.
+
+---
+
+## ⚙️ Cara Instalasi dan Konfigurasi
+
+### 1️⃣ Clone Repository
+```bash
+git clone https://github.com/username/smart-traffic-vision.git
+cd smart-traffic-vision
+```
+
+### 2️⃣ Setup Backend (FastAPI + YOLOv8)
+Masuk ke folder backend:
+```bash
+cd be
+pip install -r requirements.txt
+```
+
+Buat file model `best.pt` di folder `be/` (file YOLOv8 hasil training).  
+Jika belum punya model, kamu bisa unduh model bawaan YOLOv8:
+```bash
+yolo detect train data=coco.yaml model=yolov8n.pt epochs=10
+```
+
+Jalankan backend:
+```bash
+uvicorn main:app --host 0.0.0.0 --port 8000
+```
+Akan berjalan di `http://localhost:8000`
+
+---
+
+### 3️⃣ Setup Frontend (React + Tailwind)
+Masuk ke folder frontend:
+```bash
+cd fe
+npm install
+npm run dev
+```
+Frontend berjalan di `http://localhost:5173`
+
+Pastikan koneksi API diarahkan ke backend (`http://localhost:8000`).
+
+---
+
+## 🧩 Struktur Folder
+```
+smart-traffic-vision/
+│
+├── 📂 be/                 # Backend (FastAPI, YOLOv8, OpenCV)
+│   ├── main.py
+│   ├── video_stream.py
+│   ├── vehicle_detection.py
+│   ├── requirements.txt
+│   └── best.pt
+│
+├── 📂 fe/                 # Frontend (React + Tailwind)
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── VehicleStats.jsx
+│   │   │   ├── TrafficChart.jsx
+│   │   │   └── Heatmap.jsx
+│   │   └── App.jsx
+│   ├── package.json
+│   └── vite.config.js
+│
+├── 📂 video/              # Folder video demonstrasi
+│   └── demo.mp4 (atau link.txt)
+│
+└── 📄 README.md
+```
+
+---
+
+## 🎥 Panduan Pembuatan Video Demonstrasi
+
+### 1️⃣ Persiapan Proyek
+- Pastikan semua dependensi telah diinstal.
+- Tunjukkan struktur proyek di VSCode.
+- Jalankan backend (`uvicorn main:app --reload`) dan frontend (`npm run dev`).
+- Jelaskan fungsi setiap komponen utama:
+  - `video_stream.py`: pengambil video dan deteksi kendaraan.
+  - `vehicle_detection.py`: model YOLOv8 untuk deteksi.
+  - `TrafficChart.jsx`: visualisasi data di dashboard.
+
+### 2️⃣ Demo Aplikasi
+- Buka `http://localhost:5173` di browser.
+- Tampilkan **Dashboard** dan **Live Streaming**.
+- Perlihatkan deteksi kendaraan dan grafik berubah real-time.
+- Jelaskan status kepadatan (“Lenggang”, “Lancar”, dst).
+
+### 3️⃣ Deployment (Opsional)
+- Upload backend ke **Render.com** atau **Railway.app**.
+- Upload frontend ke **Vercel.com**.
+- Pastikan API URL disesuaikan dengan domain hosting.
+
+---
+
+## 🌐 URL Aplikasi (Contoh)
+- Frontend: [https://smart-traffic-s2f.vercel.app](https://smart-traffic-s2f.vercel.app)
+- Backend API: [https://smart-traffic-api.onrender.com](https://smart-traffic-api.onrender.com)
+
+---
+
+## 🧾 Kriteria Penilaian (Sesuai Panduan Dosen)
+| Aspek | Deskripsi |
+|-------|------------|
+| 💡 **Kompleksitas Masalah & Solusi** | Deteksi multi-objek real-time dari streaming CCTV publik |
+| 🧠 **Kualitas Implementasi AI** | YOLOv8 pretrained model, optimasi OpenCV, multithreading |
+| 🌐 **Deployment & Integrasi Live** | Fullstack terhubung React + FastAPI |
+| 🎥 **Demo Video** | Jelas, terstruktur, dan menunjukkan hasil live |
+| 📄 **Dokumentasi & Kode Sumber** | Lengkap, modular, mudah dijalankan |
+
+---
+
+## 🏁 Penutup
+Proyek ini menjadi wujud penerapan nyata dari **AI dalam Smart City**, khususnya untuk analisis lalu lintas di Medan.  
+Dengan sistem ini, diharapkan dapat membantu **Dinas Perhubungan** dalam pengambilan keputusan berbasis data real-time.
+
+---
+
+**📘 Tim S² F Logic – Machine Learning UTS 2025**  
+`Samuel G. Christian Pakpahan (221113531)`  
+`Sontiar Eseria Tampubolon (221112223)`
