@@ -17,9 +17,9 @@ Aplikasi ini menggabungkan **backend FastAPI** untuk pemrosesan AI & streaming v
 
 ## 📸 Tampilan Aplikasi
 
-| Dashboard | Heatmap | Live Streaming |
+| Dashboard | Live Streaming | About |
 |------------|----------|----------------|
-| ![Dashboard](assets/dashboard.png) | ![Heatmap](assets/heatmap.png) | ![Live](assets/live.png) |
+| ![Dashboard](assets/hasil (2).png) | ![LiveStreaming](assets/hasil (3).png) | ![About](assets/hasil (1).png) |
 
 ---
 
