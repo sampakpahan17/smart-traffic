@@ -61,12 +61,6 @@ cd be
 pip install -r requirements.txt
 ```
 
-Buat file model `best.pt` di folder `be/` (file YOLOv8 hasil training).  
-Jika belum punya model, kamu bisa unduh model bawaan YOLOv8:
-```bash
-yolo detect train data=coco.yaml model=yolov8n.pt epochs=10
-```
-
 Jalankan backend:
 ```bash
 uvicorn main:app --host 0.0.0.0 --port 8000
